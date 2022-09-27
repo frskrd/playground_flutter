@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 
-void main(List<String> args) => runApp(const MyApp());
+import 'routes/routes.dart';
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Playground',
-      home: Homepage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      initialRoute: initialRoute,
+      routes: routes,
     );
-  }
-}
-
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
